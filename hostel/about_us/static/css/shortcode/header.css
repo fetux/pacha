@@ -34,10 +34,7 @@ NOTE: This is Header style file. All Header related style included in this file.
     position: relative;
     top: -60px;
 }
-.header-sticky.sticky .logo img {
-    top: -25px;
-}
-}
+
 .header-area {
     /*background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;*/
     position: relative;
@@ -60,9 +57,7 @@ NOTE: This is Header style file. All Header related style included in this file.
     box-shadow: 0 0 10px 10px rgba(255,255,255,0.9);
     height: 130px;
 }
-.fixed.sticky {
-    height: auto;
-}
+
 .header-contact > span {
     color: #696C21;
     display: inline-block;
@@ -85,7 +80,7 @@ NOTE: This is Header style file. All Header related style included in this file.
     position: relative;
 }
 .main-menu ul {
-    font-size:14px;
+    font-size:12px;
     padding-top: 20px;
 }
 .main-menu ul li {
@@ -187,9 +182,6 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
     .sticky .main-menu nav ul {
     padding: 0;
-}
-.sticky .main-menu nav ul li {
-    font-size: 12px;
 }
 /*.sticky .logo {padding: 10px 0;}*/
 .header-area .sticky {

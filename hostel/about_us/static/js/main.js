@@ -30,6 +30,11 @@
 (function ($) {
  "use strict";
 
+    $('.activity-btn').click(function () {
+        $('#contact-text').html($(this).data('message'));
+        $('#contact-text').focus();
+
+    });
 
 /*------------------------------------
     01. Sticky Menu
@@ -41,11 +46,11 @@
        var scroll = win.scrollTop();
        if (scroll < 245) {
         stic.removeClass("sticky");
-        stic.find('.logo img').attr('src', '/static/img/logo/logo.png');
+        // stic.find('.logo img').attr('src', '/static/img/logo/logo.png');
         // stic.find('#book-now').hide();
        }else{
         stic.addClass("sticky");
-        stic.find('.logo img').attr('src', '/static/img/logo/logo-sticky.png');
+        // stic.find('.logo img').attr('src', '/static/img/logo/logo-sticky.png');
         // stic.find('#book-now').show();
        }
     });

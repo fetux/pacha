@@ -1197,3 +1197,14 @@ span.c-text {display: inline-block;}
 section {
     padding-top: 160px !important;
 }
+
+.google-map-area {
+    margin-top: 70px;
+}
+
+.activity {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #696C21;
+}

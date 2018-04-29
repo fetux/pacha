@@ -58,7 +58,7 @@ ROOT_URLCONF = 'hostel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['hostel/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,3 +127,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = 'uploads'
 MEDIA_URL = '/uploads/'
 
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 25

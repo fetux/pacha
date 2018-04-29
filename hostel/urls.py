@@ -18,11 +18,11 @@ from django.urls import path, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.models import Group
-from hostel.about_us.views import AboutUsList
+from hostel.views import HostelView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path('^$', AboutUsList.as_view()),
+    re_path('^$', HostelView.as_view()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = u"Nucapacha Hostel - Administracion"
