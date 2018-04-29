@@ -25,7 +25,7 @@ SECRET_KEY = '#e*wq9dx%%o-@d+(hp*ve5*x13^zsfa9@kr%#8lji%$7+0q@tu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'nucapacha.fetux.net', 'nucapacha.com']
 
 
 # Application definition
