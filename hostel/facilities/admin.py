@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import AboutUs
+from .models import Facility
 
 
-@admin.register(AboutUs)
-class AboutUsAdmin(admin.ModelAdmin):
-        model = AboutUs
+@admin.register(Facility)
+class FacilityAdmin(admin.ModelAdmin):
+        model = Facility
 
         def has_add_permission(self, request):
                 return False

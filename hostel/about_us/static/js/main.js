@@ -31,8 +31,8 @@
  "use strict";
 
     $('.activity-btn').click(function () {
-        $('#contact-text').html($(this).data('message'));
-        $('#contact-text').focus();
+        $('#contact-form textarea').html($(this).data('message'));
+        $('#contact-form textarea').focus();
 
     });
 
@@ -62,7 +62,8 @@
     Slider Carousel
 ------------------------ */
     $(".slider-wrapper").owlCarousel({
-        loop:true,
+        loop: true,
+        autoplay: true,
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         smartSpeed: 2500,

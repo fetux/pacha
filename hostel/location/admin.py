@@ -1,13 +1,15 @@
 from django.contrib import admin
-from .models import AboutUs
+from .models import Location
 
 
-@admin.register(AboutUs)
-class AboutUsAdmin(admin.ModelAdmin):
-        model = AboutUs
+@admin.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+        model = Location
 
         def has_add_permission(self, request):
                 return False
 
         def has_delete_permission(self, request, obj=None):
-                return False
+            return False
+
+

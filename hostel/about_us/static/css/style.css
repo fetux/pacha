@@ -32,7 +32,7 @@
 -----------------------------------------------------------------------------------*/
 p {
     font-size: 22px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     font-variant: petite-caps;
 }
 /*----------------------------------------*/
@@ -86,7 +86,7 @@ form.search-form {
 .box-select .select::after {content: "\f331";}
 .box-select .select.arrow::after {content: "\f2f2"; font-size: 24px; top: 8px}
 .about-text {padding-top: 90px; font-variant: petite-caps;}
-.about-text p {font-size: 22px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif}
+.about-text p {font-size: 22px; /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif*/}
 .about-links > a {
     border: 1px solid #f1f1f1;
     color: #696C21;
@@ -724,7 +724,13 @@ span.image.s-img {
     position: absolute;
     transform: translateY(100px);
     transition: all 0.3s ease-in-out 0.1s;
+    font-weight: bold;
 }
+.hover-text > p > span {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
 .single-room:hover p {
     opacity: 1;
     transform: translateY(0px);
@@ -767,7 +773,7 @@ span.image.s-img {
 }
 .room-grid .hover-text {z-index: 2;}
 .room-grid .single-room:hover::after {transform: scaleY(0.57);}
-.room-grid .single-room .hover-text > p {bottom: 42%; padding: 0 20px;}
+.room-grid .single-room .hover-text > p {bottom: 30%; padding: 0 20px; text-align: center; width: 100%; font-size: 18px;}
 .room-grid .single-room:hover .hover-text .default-btn {bottom: 28%;}
 .room-list a {display: block;}
 .room-list-text > h3:hover a {color: #696C21;}
@@ -1187,7 +1193,7 @@ span.c-text {display: inline-block;}
 #tcModal .modal-body ul {
     list-style: inherit;
     font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     font-variant: petite-caps;
     margin: inherit;
     padding: inherit;
@@ -1207,4 +1213,56 @@ section {
     padding: 15px;
     border-radius: 10px;
     background-color: #696C21;
+}
+
+
+/* SPECIAL DISCOUNT OFFER */
+#currentOfferModal .modal-content {
+    border:15px solid #696C21
+}
+
+#currentOfferModal .modal-header.text-center {
+    background-color: #696C21;
+    color: white;
+    padding: 5px;
+}
+
+
+
+#currentOfferModal .modal-header button span {
+    color: white;
+}
+
+h4#currentOfferModalLabel {
+    color: white;
+    font-weight: bolder;
+}
+
+
+
+#currentOfferModal .modal-body h2 {
+    text-align: center;
+}
+
+#currentOfferModal .modal-body p {
+    text-align: center;
+    margin: 50px;
+}
+
+#currentOfferModal .modal-body .coupon {
+    width: 200px;
+    text-align: center;
+    padding: 14px;
+    font-size: 25px;
+    border: 3px dotted;
+    background: #696C21;
+    color: white;
+    margin: 0 auto 30px;
+}
+
+
+
+#currentOfferModal .modal-body h3 {
+    text-align: center;
+    font-size: 12px
 }

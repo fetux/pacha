@@ -3,9 +3,10 @@ from django.views.generic.edit import FormView
 from .forms import ContactForm
 
 from hostel.about_us.models import AboutUs
-from hostel.rooms.models import Room
-#from hostel.facilities.models import Facility
-#from hostel.activities.models import Activity
+from hostel.activities.models import ActivitiesDescription
+from hostel.facilities.models import Facility
+from hostel.location.models import Location
+from hostel.rooms.models import Room, RoomsDescription
 #from hostel.gallery_images.models import GalleryImage
 
 
@@ -20,10 +21,11 @@ class HostelView(FormView):
         # Add in a QuerySet of all the books
 
         context['about_us'] = AboutUs.objects.all().first()
-        #context['location'] = AboutUs.objects.all().first()
+        context['location'] = Location.objects.all().first()
         context['rooms'] = Room.objects.all()
-        #context['facilities'] = Facility.objects.all().first()
-        #context['activities'] = Activity.objects.all().first()
+        context['rooms_description'] = RoomsDescription.objects.all().first()
+        context['facilities'] = Facility.objects.all().first()
+        context['activities'] = ActivitiesDescription.objects.all().first()
         #context['gallery_images'] = GalleryImage.objects.all()
         return context
 

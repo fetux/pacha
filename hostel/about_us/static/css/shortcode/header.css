@@ -79,9 +79,16 @@ NOTE: This is Header style file. All Header related style included in this file.
     background: rgba(237, 237, 237, 0.35) none repeat scroll 0 0;
     position: relative;
 }
+.main-menu p {
+    font-size: 10px;
+    text-align: center;
+    margin: 0;
+    font-weight: bolder;
+}
+}
 .main-menu ul {
     font-size:12px;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 .main-menu ul li {
     display: inline-block;

@@ -13,20 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Room',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('room', models.CharField(max_length=40)),
-                ('price_shared', models.FloatField()),
-                ('price_private', models.FloatField(blank=True, null=True)),
-            ],
-            options={
-                'verbose_name_plural': 'Habitaciones',
-                'verbose_name': 'Habitacion',
-            },
-        ),
-        migrations.CreateModel(
-            name='RoomsDescription',
+            name='Location',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=25)),
@@ -35,8 +22,8 @@ class Migration(migrations.Migration):
                 ('text_es', ckeditor.fields.RichTextField(verbose_name='Texto')),
             ],
             options={
-                'verbose_name_plural': 'Habitaciones',
-                'verbose_name': 'Habitacion',
+                'verbose_name_plural': 'Location',
+                'verbose_name': 'Location',
             },
         ),
     ]

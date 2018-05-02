@@ -37,10 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'hostel.about_us.apps.AboutUsConfig',
+    'hostel.activities.apps.ActivitiesConfig',
+    #'hostel.carousel_images.apps.CarouselImagesConfig',
+    'hostel.facilities.apps.FacilitiesConfig',
+    #'hostel.gallery_images.apps.GalleryImagesConfig',
+    'hostel.location.apps.LocationConfig',
     'hostel.rooms.apps.RoomsConfig',
-    'hostel.deals',
-    'hostel.services.apps.ServicesConfig',
+    'hostel.special_offers.apps.SpecialOffersConfig',
+
+    'ckeditor',
+    'admin_reorder',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
 
 ROOT_URLCONF = 'hostel.urls'
@@ -58,7 +67,7 @@ ROOT_URLCONF = 'hostel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/fetu/nucapacha.com/hostel/templates'],
+        'DIRS': ['/home/fetu/nucapacha.com/hostel/templates', 'hostel/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,3 +138,25 @@ MEDIA_URL = '/uploads/'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Basic',
+    },
+}
+
+ADMIN_REORDER = (
+    {'app': 'about_us', 'models': (
+        'about_us.AboutUs',
+        'rooms.RoomsDescription',
+        'facilities.Facility',
+        'activities.ActivitiesDescription',
+        'location.Location',
+        'special_offers.SpecialOffer',
+        {'model': 'auth.User', 'label': 'Staff'},
+    )},
+    {'app': 'rooms', 'models': (
+        'rooms.Room',
+    )}
+)

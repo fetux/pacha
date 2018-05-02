@@ -13,18 +13,20 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='AboutUs',
+            name='SpecialOffer',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=25)),
-                ('text', ckeditor.fields.RichTextField()),
+                ('text', ckeditor.fields.RichTextField(max_length=70)),
+                ('code', models.CharField(max_length=6)),
                 ('title_es', models.CharField(max_length=25, verbose_name='Titulo')),
-                ('text_es', ckeditor.fields.RichTextField(verbose_name='Texto')),
-                ('video_URL', models.URLField()),
+                ('text_es', ckeditor.fields.RichTextField(max_length=70, verbose_name='Texto')),
+                ('code_es', models.CharField(max_length=6, verbose_name='Codigo')),
+                ('is_active', models.BooleanField(default=True)),
             ],
             options={
-                'verbose_name_plural': 'About Us',
-                'verbose_name': 'About Us',
+                'verbose_name_plural': 'Ofertas Especiales',
+                'verbose_name': 'Oferta Especial',
             },
         ),
     ]

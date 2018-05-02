@@ -2,7 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 
-class AboutUs(models.Model):
+class ActivitiesDescription(models.Model):
 
     title = models.CharField(max_length=25)
     text = RichTextField()
@@ -10,11 +10,10 @@ class AboutUs(models.Model):
     title_es = models.CharField(max_length=25, verbose_name="Titulo")
     text_es = RichTextField(verbose_name="Texto")
 
-    video_URL = models.URLField()
-
     def __str__(self):
-        return "About Us"
+        return "Activities"
 
     class Meta:
-        verbose_name = 'About Us'
-        verbose_name_plural = 'About Us'
+        verbose_name = 'Activities'
+        verbose_name_plural = 'Activities'
+
