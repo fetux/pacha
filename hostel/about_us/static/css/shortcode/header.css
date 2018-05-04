@@ -54,8 +54,8 @@ NOTE: This is Header style file. All Header related style included in this file.
     width: 100%;
     z-index: 9;
     background: rgba(255, 255, 255, 0.9) none no-repeat scroll 0 0;
-    box-shadow: 0 0 10px 10px rgba(255,255,255,0.9);
-    /*max-height: 130px;*/
+    /*box-shadow: 0 0 10px 10px rgba(255,255,255,0.9);
+    max-height: 130px;*/
 }
 
 .header-contact > span {

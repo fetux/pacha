@@ -1182,12 +1182,29 @@ span.c-text {display: inline-block;}
 }
 #contact-form button.default-btn::before {background: #333333 none repeat scroll 0 0;}
 
+/* Important part */
+#faqModal .modal-dialog{
+    overflow-y: initial !important
+}
+#faqModal .modal-body{
+    height: 500px;
+    overflow-y: auto;
+}
+
 #faqModal .modal-body b {
     font-size: 18px;
 }
 
 #faqModal .modal-body p {
     font-size: 14px;
+}
+
+#tcModal .modal-dialog{
+    overflow-y: initial !important
+}
+#tcModal .modal-body{
+    height: 500px;
+    overflow-y: auto;
 }
 
 #tcModal .modal-body ul {

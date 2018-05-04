@@ -12,9 +12,9 @@ NOTE: This is Footer style file. All footer related style included in this file.
     color: #f7f7f7;
     margin-top: 100px;
 }
-.footer-widget-area {padding: 130px 0 61px;}
+.footer-widget-area {padding: 40px;}
 .footer-logo > a {display: inline-block;}
-.footer-logo {margin-bottom: 29px;}
+.footer-logo {margin-bottom: 29px; filter: invert(50%); -webkit-filter: invert(50%);}
 .social-icons a {
     border: 1px solid #b1b1b1;
     color: #b1b1b1;

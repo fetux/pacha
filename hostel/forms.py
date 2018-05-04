@@ -9,11 +9,10 @@ class ContactForm(forms.Form):
 
     def send_email(self):
         # send email using the self.cleaned_data dictionary
-        send_mail(
+        s = send_mail(
             'Message from Nucapacha.com',
             self.cleaned_data['message'],
             self.cleaned_data['mail'],
-            ['fetu@fetux.net'],
-            #['contact@nucapacha.com'],
+            ['contact@nucapacha.com'],
             fail_silently=False,
         )
