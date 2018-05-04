@@ -30,7 +30,7 @@
 
 <!-- Header Area Start -->
 <header class="header-area fixed header-sticky">
-    <div>
+    <div class="hidden-xs">
         <div class="container">
             <div class="row nav-top" style="padding: 10px 15px; color: gray">
                 <div class="col-md-4 main-menu">
@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container hidden-xs">
         <div class="row main-nav">
             <div class="col-md-4">
                 <div class="banner-btn">
@@ -119,14 +119,14 @@
                 </form>
                 -->
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center" style="max-height: 70px;">
                 <div class="logo">
                     <a href="index.html"><img src="static/img/logo/logo.png" alt="Nucapacha Hostel"  ></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <!-- Mainmenu Start -->
-                <div class="main-menu hidden-xs">
+                <div class="main-menu">
                     <nav>
                         <ul class="text-right" style="">
                             <div class="row">
@@ -155,19 +155,14 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul>
-                                <li><a href="index.html">HOME</a></li>
-                                <li><a href="#">ROOMS</a>
-                                    <!--
-                                      <ul class="submenu">
-                                          <li><a href="#">ROOM LIST</a></li>
-                                          <li><a href="#">ROOM DETAILS</a></li>
-                                      </ul>
-                                    -->
-                                </li>
-                                <li><a href="event.html">SERVICES</a></li>
-                                <li><a href="location.html">LOCATION</a></li>
-                                <!--<li><a href="team.html">TEAM</a></li>-->
-                                <li><a href="contact.html">CONTACT</a></li>
+                                <li style="border: none;"><a href="#about">About us</a></li>
+                                <li style="border: none;"><a href="#location">Location</a></li>
+                                <li style="border: none;"><a href="#contact_us">Contact Us</a></li>
+                                <li style="border: none;"><a href="#" data-toggle="modal" data-target="#faqModal">FAQ’s</a></li>
+                                <li><a href="#rooms">ROOMS</a></li>
+                                <li><a href="#facilities">FACILITIES</a></li>
+                                <li><a href="#activities">ACTIVITIES</a></li>
+                                <li><a href="#gallery">GALLERY</a></li>
                             </ul>
                         </nav>
                     </div>

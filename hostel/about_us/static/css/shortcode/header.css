@@ -55,7 +55,7 @@ NOTE: This is Header style file. All Header related style included in this file.
     z-index: 9;
     background: rgba(255, 255, 255, 0.9) none no-repeat scroll 0 0;
     box-shadow: 0 0 10px 10px rgba(255,255,255,0.9);
-    height: 130px;
+    /*max-height: 130px;*/
 }
 
 .header-contact > span {
@@ -228,3 +228,7 @@ NOTE: This is Header style file. All Header related style included in this file.
 .mean-container a.meanmenu-reveal:hover span {background: #696C21 none repeat scroll 0 0;}
 .mean-last {margin-bottom: 20px}
 .mobile-menu {position: relative}
+
+.mean-container .mean-bar::before {
+    content: "NUCAPACHA" !important;
+}
