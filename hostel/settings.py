@@ -40,9 +40,9 @@ INSTALLED_APPS = [
 
     'hostel.about_us.apps.AboutUsConfig',
     'hostel.activities.apps.ActivitiesConfig',
-    #'hostel.carousel_images.apps.CarouselImagesConfig',
+    'hostel.carousel_images.apps.CarouselImagesConfig',
     'hostel.facilities.apps.FacilitiesConfig',
-    #'hostel.gallery_images.apps.GalleryImagesConfig',
+    'hostel.gallery_images.apps.GalleryImagesConfig',
     'hostel.location.apps.LocationConfig',
     'hostel.rooms.apps.RoomsConfig',
     'hostel.special_offers.apps.SpecialOffersConfig',

@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class GalleryImagesConfig(AppConfig):
-    name = 'gallery_images'
+    name = 'hostel.gallery_images'
