@@ -3,4 +3,5 @@ from django.db import models
 
 class GalleryImage(models.Model):
 
-    pass
+    image = models.ImageField()
+    category = models.CharField(max_length=3)

@@ -12,11 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='GalleryImage',
+            name='CarouselImage',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(upload_to='')),
-                ('category', models.CharField(max_length=3)),
+                ('active', models.BooleanField(default=True)),
             ],
         ),
     ]
