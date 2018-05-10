@@ -1,4 +1,6 @@
 from django.views.generic.edit import FormView
+from django.http import HttpResponse
+
 
 from .forms import ContactForm
 
@@ -18,9 +20,9 @@ class HostelView(FormView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-
+        context['lang'] = self.request.session['lang'].strip() if 'lang' in self.request.session else 'en'
         context['about_us'] = AboutUs.objects.all().first()
+        print(context['about_us'].text_es)
         context['location'] = Location.objects.all().first()
         context['rooms'] = Room.objects.all()
         context['rooms_description'] = RoomsDescription.objects.all().first()
@@ -33,4 +35,9 @@ class HostelView(FormView):
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
         form.send_email()
-        return super().form_valid(form)
+        return HttpResponse("Message sent! Thank you.")
+
+
+def switch_lang(request, lang):
+    request.session['lang'] = lang
+    return HttpResponse()

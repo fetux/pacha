@@ -30,11 +30,30 @@
 (function ($) {
  "use strict";
 
+    console.log(window.location)
+    var location = window.location.href.split('#');
+    if (location.length > 1) {
+        if (location[1].toLowerCase() == 'faqs') {
+            $('#faqModal').modal('show');
+        }
+        else if (location[1].toLowerCase() == 'terms') {
+            $('#tcModal').modal('show');
+        }
+    }
+
+    $('.lang').click(function (e) {
+        e.preventDefault();
+        $.get($(this).data('lang'), function (r) {
+            console.log(window.location)
+           window.location.reload()
+        })
+    })
     $('.activity-btn').click(function () {
         $('#contact-form textarea').html($(this).data('message'));
         $('#contact-form textarea').focus();
 
     });
+
 
 /*------------------------------------
     01. Sticky Menu
