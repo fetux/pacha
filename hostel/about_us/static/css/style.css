@@ -773,7 +773,7 @@ span.image.s-img {
 }
 .room-grid .hover-text {z-index: 2;}
 .room-grid .single-room:hover::after {transform: scaleY(0.57);}
-.room-grid .single-room .hover-text > p {bottom: 30%; padding: 0 20px; text-align: center; width: 100%; font-size: 18px;}
+.room-grid .single-room .hover-text > p {padding: 0 20px; text-align: center; width: 100%; font-size: 18px;}
 .room-grid .single-room:hover .hover-text .default-btn {bottom: 28%;}
 .room-list a {display: block;}
 .room-list-text > h3:hover a {color: #696C21;}
@@ -879,15 +879,15 @@ span.image.s-img {
     overflow: hidden;
     padding-top: 22px;
 }
-.single-facility > span {
-    display: block;
-    font-family: "raleway";
-    line-height: 25px;
-    margin-bottom: 10px;
+.single-facility {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
 }
-.single-facility {float: left; width: 33.3333%;}
-.single-faciity {padding-top: 1px;}
-.single-facility span i {font-size: 18px; padding-right: 10px;}
+
+
 .cost > h2, .cost span {color: #ffffff;}
 .cost {
     background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
@@ -1282,4 +1282,10 @@ h4#currentOfferModalLabel {
 #currentOfferModal .modal-body h3 {
     text-align: center;
     font-size: 12px
+}
+
+
+#activities .single-room {
+    max-height: 400px;
+    overflow: hidden;
 }

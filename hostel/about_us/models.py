@@ -16,5 +16,5 @@ class AboutUs(models.Model):
         return "About Us"
 
     class Meta:
-        verbose_name = 'About Us'
-        verbose_name_plural = 'About Us'
+        verbose_name = 'About Us description'
+        verbose_name_plural = 'About Us description'

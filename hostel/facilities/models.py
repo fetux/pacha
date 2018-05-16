@@ -14,5 +14,5 @@ class Facility(models.Model):
         return "Facilities"
 
     class Meta:
-        verbose_name = 'Facilities'
-        verbose_name_plural = 'Facilities'
+        verbose_name = 'Facilities description'
+        verbose_name_plural = 'Facilities description'

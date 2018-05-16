@@ -7,6 +7,10 @@ class ContactForm(forms.Form):
     mail = forms.CharField()
     message = forms.CharField(widget=forms.Textarea)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
     def send_email(self):
         # send email using the self.cleaned_data dictionary
         s = send_mail(

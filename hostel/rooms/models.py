@@ -14,8 +14,8 @@ class RoomsDescription(models.Model):
         return 'Rooms'
 
     class Meta:
-        verbose_name = 'Room'
-        verbose_name_plural = 'Rooms'
+        verbose_name = 'Rooms description'
+        verbose_name_plural = 'Rooms description'
 
 
 class Room(models.Model):

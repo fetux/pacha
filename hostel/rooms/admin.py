@@ -5,6 +5,7 @@ from .models import Room, RoomsDescription
 @admin.register(RoomsDescription)
 class RoomsDescriptionAdmin(admin.ModelAdmin):
     model = RoomsDescription
+    list_display = ('title', 'text',)
 
     def has_add_permission(self, request):
         return False

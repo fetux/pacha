@@ -32,16 +32,31 @@
 <header class="header-area fixed header-sticky">
     <div class="hidden-xs">
         <div class="container">
-            <div class="row nav-top" style="padding: 10px 15px; color: gray">
-                <div class="col-md-4 main-menu">
+            <div class="row nav-top">
+                <div class="col-md-4 main-menu" style="padding: 14px 0">
                     <ul id="menu-sixtyone-left-sp" >
-                        <li style="border: none;"><a href="#about">About us</a></li>
-                        <li style="border: none;"><a href="#location">Location</a></li>
-                        <li style="border: none;"><a href="#contact_us">Contact Us</a></li>
-                        <li style="border: none;"><a href="#" data-toggle="modal" data-target="#faqModal">FAQ’s</a></li>
+                        {% if lang == 'en' %}
+                            <li style="border: none;"><a href="#about">About us</a></li>
+                            <li style="border: none;"><a href="#location">Location</a></li>
+                            <li style="border: none;"><a href="#contact_us">Contact Us</a></li>
+                            <li style="border: none;"><a href="#" data-toggle="modal" data-target="#faqModal">FAQ’s</a></li>
+                        {% elif lang  == 'es' %}
+                            <li style="border: none;"><a href="#about">Hostel</a></li>
+                            <li style="border: none;"><a href="#location">Ubicaci&oacute;n</a></li>
+                            <li style="border: none;"><a href="#contact_us">Contacto</a></li>
+                            <li style="border: none;"><a href="#" data-toggle="modal" data-target="#faqModal">FAQ’s</a></li>
+                        {% endif %}
+
                     </ul>
                     <a href="#" data-toggle="modal" data-target="#currentOfferModal">
-                        <p><i class="fas fa-thumbs-up"></i> <u>CURRENT OFFER:</u> 10% DISCOUNT FACEBOOK FAN</p>
+                        <p><i class="fas fa-thumbs-up"></i>
+                            <u>
+                            {% if lang == 'en' %}
+                                CURRENT OFFER:
+                            {% elif lang  == 'es' %}
+                                OFERTA ESPECIAL:
+                            {% endif %}
+                            </u> 10% DISCOUNT FACEBOOK FAN</p>
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -49,9 +64,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="header-links">
-                        <div style="text-align: right">
-                            <a class="lang" data-lang="lang/en" href="#">EN</a>-
-                            <a class="lang" data-lang="lang/es" href="#">ES</a>
+                        <div style="text-align: right; margin-bottom: 5px;">
+                            <a class="lang" style=" color: #696C21" data-lang="lang/en" href="#">EN</a>-
+                            <a class="lang" style=" color: #696C21" data-lang="lang/es" href="#">ES</a>
                         </div>
                         <a target="_blank" href="https://www.facebook.com/hostel.nucapacha/"><i class="zmdi zmdi-facebook"></i></a>
                         <a target="_blank" href="https://twitter.com/nucapacha"><i class="zmdi zmdi-twitter"></i></a>
@@ -66,7 +81,13 @@
         <div class="row main-nav">
             <div class="col-md-4">
                 <div class="banner-btn">
-                    <a id="book-now" class="default-btn" href="#" data-toggle="modal" data-target="#bookModal">book now</a>
+                    <a id="book-now" class="default-btn" href="#" data-toggle="modal" data-target="#bookModal">
+                        {% if lang == 'en' %}
+                            book now
+                        {% elif lang  == 'es' %}
+                            reservar
+                        {% endif %}
+                    </a>
                 </div>
                 <!--
                 <form action="index.html#" method="post" class="search-form">
@@ -123,7 +144,7 @@
                 </form>
                 -->
             </div>
-            <div class="col-md-4 text-center" style="max-height: 70px;">
+            <div class="col-md-4 text-center" style="max-height: 50px;">
                 <div class="logo">
                     <a href="index.html"><img src="static/img/logo/logo.png" alt="Nucapacha Hostel"  ></a>
                 </div>
@@ -135,12 +156,36 @@
                         <ul class="text-right" style="">
                             <div class="row">
                                 <!--<li class="col-xs-4"><a href="#">HOME</a></li>-->
-                                <li class="col-xs-4 col-xs-offset-4"><a href="#rooms">ROOMS</a></li>
-                                <li class="col-xs-4"><a href="#facilities">FACILITIES</a></li>
+                                <li class="col-xs-4 col-xs-offset-4"><a href="#rooms">
+                                    {% if lang == 'en' %}
+                                        ROOMS
+                                    {% elif lang  == 'es' %}
+                                        HABITACIONES
+                                    {% endif %}
+                                </a></li>
+                                <li class="col-xs-4"><a href="#facilities">
+                                    {% if lang == 'en' %}
+                                        FACILITIES
+                                    {% elif lang  == 'es' %}
+                                        SERVICIOS
+                                    {% endif %}
+                                </a></li>
                             </div>
                             <div class="row">
-                                <li class="col-xs-4 col-xs-offset-4"><a href="#activities">ACTIVITIES</a></li>
-                                <li class="col-xs-4"><a href="#gallery">GALLERY</a></li>
+                                <li class="col-xs-4 col-xs-offset-4"><a href="#activities">
+                                    {% if lang == 'en' %}
+                                        ACTIVITIES
+                                    {% elif lang  == 'es' %}
+                                        ACTIVIDADES
+                                    {% endif %}
+                                </a></li>
+                                <li class="col-xs-4"><a href="#gallery">
+                                    {% if lang == 'en' %}
+                                        GALLERY
+                                    {% elif lang  == 'es' %}
+                                        GALER&Iacute;A
+                                    {% endif %}
+                                </a></li>
 
                             </div>
                         </ul>

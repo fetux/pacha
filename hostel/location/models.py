@@ -14,7 +14,7 @@ class Location(models.Model):
         return "Location"
 
     class Meta:
-        verbose_name = 'Location'
-        verbose_name_plural = 'Location'
+        verbose_name = 'Location description'
+        verbose_name_plural = 'Location description'
 
 

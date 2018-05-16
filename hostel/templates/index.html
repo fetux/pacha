@@ -5,17 +5,31 @@
 <!-- Background Area Start -->
 <section class="slider-area" style="padding-top: 0px!important;">
     <div class="slider-wrapper">
-        <div class="single-slide" style="background-image: url('static/img/gallery/20.jpg');">
-            <div class="banner-content overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="text-content-wrapper">
-                                <div class="text-content text-center">
-                                    <h1 class="pt-180">Welcome to Nucapacha</h1>
-                                    <p>The best backpackers hostel in Guayaquil</p>
-                                    <div class="banner-btn">
-                                        <a href="#" data-toggle="modal" data-target="#bookModal" class="default-btn">book now</a>
+        {% for slide in carousel_images %}
+            <div class="single-slide" style="background-image: url({{ slide.image.url }});">
+                <div class="banner-content overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="text-content-wrapper">
+                                    <div class="text-content text-center">
+                                        {% if lang == 'en' %}
+                                            <h1 class="pt-180">{{ slide.title }}</h1>
+                                            <p>{{ slide.subtitle }}</p>
+                                        {% elif lang  == 'es' %}
+                                            <h1 class="pt-180">{{ slide.title_es }}</h1>
+                                            <p>{{ slide.subtitle_es }}</p>
+                                        {% endif %}
+
+                                        <div class="banner-btn">
+                                            <a href="#" data-toggle="modal" data-target="#bookModal" class="default-btn">
+                                            {% if lang == 'en' %}
+                                                book now
+                                            {% elif lang  == 'es' %}
+                                                reservar
+                                            {% endif %}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -23,64 +37,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="single-slide" style="background-image: url('static/img/gallery/17.jpg');">
-            <div class="banner-content overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="text-content-wrapper">
-                                <div class="text-content text-center">
-                                    <h1 class="pt-180">Welcome to Nucapacha</h1>
-                                    <p>The best backpackers hostel in Guayaquil</p>
-                                    <div class="banner-btn">
-                                        <a href="#" data-toggle="modal" data-target="#bookModal" class="default-btn">book now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-slide" style="background-image: url('static/img/gallery/18.jpg');">
-            <div class="banner-content overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="text-content-wrapper">
-                                <div class="text-content text-center">
-                                    <h1 class="pt-180">Welcome to Nucapacha</h1>
-                                    <p>The best backpackers hostel in Guayaquil</p>
-                                    <div class="banner-btn">
-                                        <a href="#" data-toggle="modal" data-target="#bookModal" class="default-btn">book now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-slide" style="background-image: url('static/img/gallery/19.jpg');">
-            <div class="banner-content overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="text-content-wrapper">
-                                <div class="text-content text-center">
-                                    <h1 class="pt-180">Welcome to Nucapacha</h1>
-                                    <p>The best backpackers hostel in Guayaquil</p>
-                                    <div class="banner-btn">
-                                        <a href="#" data-toggle="modal" data-target="#bookModal" class="default-btn">book now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 <!-- Background Area End -->
@@ -146,7 +103,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="col-xs-12 text-center">
             {% if lang == 'en' %}
                 {{ rooms_description.text|safe }}
             {% elif lang  == 'es' %}
@@ -158,12 +115,18 @@
     </div>
     <div class="container-fluid">
         <div class="single-room">
-            <a href="#" style="background-image: url('static/img/room/h-1.jpg')"></a>
+            <a href="#" style="background-image: url('static/img/rooms/24.jpg')"></a>
             <div class="room-hover text-center">
                 <div class="hover-text">
                     <h3><a href="#">Single Room</a></h3>
                     <div class="room-btn">
-                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">BOOK NOW</a>
+                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">
+                            {% if lang == 'en' %}
+                                book now
+                            {% elif lang  == 'es' %}
+                                reservar
+                            {% endif %}
+                        </a>
                     </div>
                 </div>
                 <div class="p-amount">
@@ -175,12 +138,18 @@
             </div>
         </div>
         <div class="single-room">
-            <a href="#" style="background-image: url('static/img/room/h-2.jpg')"></a>
+            <a href="#" style="background-image: url('static/img/rooms/23.jpg')"></a>
             <div class="room-hover text-center">
                 <div class="hover-text">
                     <h3><a href="#">Double Room</a></h3>
                     <div class="room-btn">
-                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">BOOK NOW</a>
+                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">
+                            {% if lang == 'en' %}
+                                book now
+                            {% elif lang  == 'es' %}
+                                reservar
+                            {% endif %}
+                        </a>
                     </div>
                 </div>
                 <div class="p-amount">
@@ -192,12 +161,18 @@
             </div>
         </div>
         <div class="single-room">
-            <a href="#" style="background-image: url('static/img/room/h-3.jpg')"></a>
+            <a href="#" style="background-image: url('static/img/rooms/4.jpg')"></a>
             <div class="room-hover text-center">
                 <div class="hover-text">
                     <h3><a href="#">Triple Room</a></h3>
                     <div class="room-btn">
-                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">BOOK NOW</a>
+                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">
+                            {% if lang == 'en' %}
+                                book now
+                            {% elif lang  == 'es' %}
+                                reservar
+                            {% endif %}
+                        </a>
                     </div>
                 </div>
                 <div class="p-amount">
@@ -209,12 +184,18 @@
             </div>
         </div>
         <div class="single-room">
-            <a href="#" style="background-image: url('static/img/room/h-4.jpg')"></a>
+            <a href="#" style="background-image: url('static/img/rooms/17.jpg')"></a>
             <div class="room-hover text-center">
                 <div class="hover-text">
                     <h3><a href="#">Dorm</a></h3>
                     <div class="room-btn">
-                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">BOOK NOW</a>
+                        <a href="#" class="default-btn" data-toggle="modal" data-target="#bookModal">
+                            {% if lang == 'en' %}
+                                book now
+                            {% elif lang  == 'es' %}
+                                reservar
+                            {% endif %}
+                        </a>
                     </div>
                 </div>
                 <div class="p-amount">
@@ -253,62 +234,62 @@
             </div>
             <div class="col-xs-12">
                 <div class="row text-center" style="margin: 30px auto">
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/wifi-icon.svg" alt="">
                         <p class="title">Wireless</p>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/pool-icon.svg" alt="">
                         <p class="title">Pool</p>
                     </div>
                 </div>
                 <div class="row text-center" style="margin: 30px auto">
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/lockers-icon.svg" alt="">
                         <p class="title">Dormis with<br>Lockers</p>
                     </div>
-                    <div class="col-xs-6">
-                        <img src="static/img/nuca-icons/book-exhange-icon.svg" alt="">
+                    <div class="col-xs-6 single-facility">
+                        <img src="static/img/nuca-icons/book-exchange-icon.svg" alt="">
                         <p class="title">Book Exchange</p>
                     </div>
                 </div>
                 <div class="row text-center" style="margin: 30px auto">
-                    <div class="col-xs-6">
-                        <img src="static/img/nuca-icons/complimentry-breakfast-icon.svg" alt="">
+                    <div class="col-xs-6 single-facility">
+                        <img src="static/img/nuca-icons/complimentary-breakfast-icon.svg" alt="">
                         <p class="title">Complimentary<br>Breakfast</p>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/tv-icon.png" alt="">
                         <p class="title">TV Room</p>
                     </div>
                 </div>
                 <div class="row text-center" style="margin: 30px auto">
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <i class="far fa-map" style="font-size: 50px;
     line-height: 79px;"></i>
                         <p class="title">Maps</p>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/laundry-icon.svg" alt="">
                         <p class="title">Laundry Service</p>
                     </div>
                 </div>
                 <div class="row text-center" style="margin: 30px auto">
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/bar-icon.png" alt="">
                         <p class="title">Bar</p>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/pick-up-service-icon.svg" alt="">
                         <p class="title">Pick up<br>Service</p>
                     </div>
                 </div>
                 <div class="row text-center" style="margin: 30px auto">
-                    <div class="col-xs-6">
-                        <img src="static/img/nuca-icons/laguagge-storage-icon.svg" alt="">
+                    <div class="col-xs-6 single-facility">
+                        <img src="static/img/nuca-icons/laugagge-storage-icon.svg" alt="">
                         <p class="title">Lugagge storage </p>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 single-facility">
                         <img src="static/img/nuca-icons/kitchen-icon.svg" alt="">
                         <p class="title">Kitchen</p>
                     </div>
@@ -353,10 +334,9 @@
                                 <span class="count"><b>Tip based</b></span>
                             </div>
 
-                            <p>
+                            <p style="bottom: 30%">
                                 <span>From: 10.30AM - Duration: 2 hours</span><br>
-                                <span><u>Tours</u></span><br>
-                                CATEDRAL, PQE IGUANAS, ROTONDA, LAS PEÑAS, PTO SANTA ANA, PARQUE LINEAL, PUENTE ZIGZAG<br>
+                                <span>Sign up as soon as you arrive!</span>
                             </p>
                         </div>
                     </div>
@@ -373,7 +353,7 @@
                                 <span class="count">per week</span><br>
                                 <span class="count"><b>Free</b></span>
                             </div>
-                            <p><i>
+                            <p style="bottom: 30%"><i>
                                 <span>Sunday at 10:30 AM</span><br>
                                 <span>Tuesday at 07:00 PM</span><br>
                                 <span>Friday at 07:00 PM</span><br>
@@ -388,7 +368,7 @@
                     <div class="room-hover text-center">
                         <div class="hover-text">
                             <h3><a href="#">Galapagos Deals</a></h3>
-                            <p style="bottom: 35%;">The Galapagos is indeed a must visit destination if you are interested in a wildlife adventure vacation. Before you rush yourself into a decision, take a minute to ask for the options that we have selected for you.</p>
+                            <p style="bottom: 150px;">The Galapagos is indeed a must visit destination if you are interested in a wildlife adventure vacation.</p>
                             <div class="room-btn">
                                 <a href="#contact_us" class="default-btn activity-btn" data-message="Hi! Please tell me more about Galapagos Deals. Thank you.">MORE INFO</a>
                             </div>
@@ -396,6 +376,40 @@
                     </div>
                 </div>
             </div>
+            {% for event in events %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-room">
+                        <img class="img-responsive" src="{{event.image.url}}" alt="">
+                        <div class="room-hover text-center">
+                            <div class="hover-text">
+                                <h3><a href="#">
+                                    {% if lang == 'en' %}
+                                        {{event.title}}
+                                    {% elif lang  == 'es' %}
+                                        {{event.title_es}}
+                                    {% endif %}
+                                </a></h3>
+
+                                    {% if lang == 'en' %}
+                                        {{ event.text|safe }}
+                                    {% elif lang  == 'es' %}
+                                        {{ event.text_es|safe }}
+                                    {% endif %}
+
+                                <div class="room-btn">
+                                    <a href="{{event.url}}" class="default-btn activity-btn">
+                                        {% if lang == 'en' %}
+                                            MORE INFO
+                                        {% elif lang  == 'es' %}
+                                            MAS INFO
+                                        {% endif %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -445,7 +459,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 text-center">
             {% if lang == 'en' %}
                 {{ location.text|safe }}
             {% elif lang  == 'es' %}
@@ -497,17 +511,18 @@
         </h3>
     </div>
     <div class="gallery-container">
-        <!--<div class="gallery-filter">
+        <div class="gallery-filter">
             <button data-filter="*" class="active"> All</button>
-            <button data-filter=".spa">Pool & Bar</button>
-            <button data-filter=".restaurent">Dining Room & Breakfast</button>
-            <button data-filter=".gym">TV Room</button>
-            <button data-filter=".hotel">Hotel</button>
-        </div>-->
+            <button data-filter=".pool-bar">Pool & Bar</button>
+            <button data-filter=".breakfast">Dining Room & Breakfast</button>
+            <button data-filter=".tv">TV Room</button>
+            <button data-filter=".rooms">Guest Rooms</button>
+        </div>
         <div class="gallery gallery-masonry">
-            <div class="gallery-item spa gym">
+        {% for image in gallery_images %}
+            <div class="gallery-item {{ image.category }}">
                 <div class="thumb">
-                    <img src="static/img/gallery/1.jpg" alt="">
+                    <img src="{{ image.image.url }}" alt="">
                 </div>
                 <div class="gallery-hover">
                     <div class="gallery-icon">
@@ -515,200 +530,14 @@
                             <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
                             <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
                         </a>
-                        <a class="image-popup" href="static/img/gallery/1.jpg">
+                        <a class="image-popup" href="{{ image.image.url }}">
                             <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
                             <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="gallery-item restaurent hotel">
-                <div class="thumb">
-                    <img src="static/img/gallery/2.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/2.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item spa hotel">
-                <div class="thumb">
-                    <img src="static/img/gallery/3.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/3.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item restaurent hotel">
-                <div class="thumb">
-                    <img src="static/img/gallery/4.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/4.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item gym">
-                <div class="thumb">
-                    <img src="static/img/gallery/5.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/5.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item spa hotel gym">
-                <div class="thumb">
-                    <img src="static/img/gallery/6.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/6.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item spa gym">
-                <div class="thumb">
-                    <img src="static/img/gallery/7.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/7.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item restaurent hotel">
-                <div class="thumb">
-                    <img src="static/img/gallery/8.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/8.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item spa hotel">
-                <div class="thumb">
-                    <img src="static/img/gallery/9.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/9.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item restaurent hotel">
-                <div class="thumb">
-                    <img src="static/img/gallery/10.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/10.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item gym">
-                <div class="thumb">
-                    <img src="static/img/gallery/11.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/11.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item spa hotel gym">
-                <div class="thumb">
-                    <img src="static/img/gallery/12.jpg" alt="">
-                </div>
-                <div class="gallery-hover">
-                    <div class="gallery-icon">
-                        <a href="index.html#">
-                            <span class="p-img"><img src="static/img/icon/link.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/link-hover.png" alt=""></span>
-                        </a>
-                        <a class="image-popup" href="static/img/gallery/12.jpg">
-                            <span class="p-img"><img src="static/img/icon/search.png" alt=""></span>
-                            <span class="s-img"><img src="static/img/icon/search-hover.png" alt=""></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        {% endfor %}
         </div>
     </div>
 </section>
@@ -716,12 +545,24 @@
 <!-- Gallery Area End -->
 <section id="contact_us" class="contact-form-area pt-90">
     <div class="section-title text-center" data-parallax="scroll" data-image-src="/static/img/gallery/11.jpg">
-        <h3>contact us</h3>
+        <h3>
+            {% if lang == 'en' %}
+                contact us
+            {% elif lang  == 'es' %}
+                contact&aacute;nos
+            {% endif %}
+        </h3>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h4 class="contact-title">details</h4>
+                <h4 class="contact-title">
+                    {% if lang == 'en' %}
+                        details
+                    {% elif lang  == 'es' %}
+                        detalles
+                    {% endif %}
+                </h4>
                 <div class="contact-text">
                     <p><span class="c-icon"><i class="zmdi zmdi-phone"></i></span><span class="c-text">(593) 4-261-0553 <br> (593) 93-922-6001</span></p>
                     <p><span class="c-icon"><i class="zmdi zmdi-email"></i></span><span class="c-text">contact@nucapacha.com</span></p>
@@ -729,10 +570,21 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h4 class="contact-title">send your message</h4>
+                <h4 class="contact-title">
+                    {% if lang == 'en' %}
+                        send your message
+                    {% elif lang  == 'es' %}
+                        envia tu mensaje
+                    {% endif %}
+                </h4>
                 <form id="contact-form" action="" method="post">{% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" value="Send message" />
+                    {% if lang == 'en' %}
+                        <input type="submit" value="Send message" />
+                    {% elif lang  == 'es' %}
+                        <input type="submit" value="Enviar mensaje" />
+                    {% endif %}
+
                 </form>
                 <!--<form action="http://devitems.com/preview/hotel-atr/mail.php" method="post">
                     <div class="row">

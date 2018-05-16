@@ -153,7 +153,10 @@ ADMIN_REORDER = (
         'facilities.Facility',
         'activities.ActivitiesDescription',
         'location.Location',
-        'special_offers.SpecialOffer',
+        {'model': 'activities.Activity', 'label': 'Events'},
+        {'model': 'gallery_images.GalleryImage', 'label': 'Gallery Images'},
+        {'model': 'carousel_images.CarouselImage', 'label': 'Carousel Images'},
+        {'model': 'special_offers.SpecialOffer', 'label': 'Special Offers'},
         {'model': 'auth.User', 'label': 'Staff'},
     )},
     {'app': 'rooms', 'models': (
