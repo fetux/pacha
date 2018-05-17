@@ -84,7 +84,9 @@ NOTE: This is Slider style file. All Slider related style included in this file.
 }
 .banner-content p {
     margin-bottom: 39px;
-    color: #fff
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 800;
 }
 .slider-area .owl-item.active .banner-content h1, .slider-area .owl-item.active .banner-content p, .slider-area .owl-item.active .banner-content .banner-btn{
     animation: 1500ms ease-in-out 0s normal both 1 running fadeInUp;
