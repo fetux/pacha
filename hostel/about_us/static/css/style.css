@@ -250,7 +250,7 @@ form.search-form {
     bottom: 26px;
     color: #ffffff;
     position: absolute;
-    right: 28px;
+    right: 15px;
     transform: translateX(100px);
     transition: all 0.3s ease-in-out 0.1s;
     z-index: 2;
