@@ -46,9 +46,12 @@ INSTALLED_APPS = [
     'hostel.location.apps.LocationConfig',
     'hostel.rooms.apps.RoomsConfig',
     'hostel.special_offers.apps.SpecialOffersConfig',
+    'hostel.terms.apps.TermsConfig',
+    'hostel.faqs.apps.FaqsConfig',
 
     'ckeditor',
     'admin_reorder',
+    'bulk_admin',
 ]
 
 MIDDLEWARE = [
@@ -153,6 +156,8 @@ ADMIN_REORDER = (
         'facilities.Facility',
         'activities.ActivitiesDescription',
         'location.Location',
+        'terms.Terms',
+        'faqs.Faq',
         {'model': 'activities.Activity', 'label': 'Events'},
         {'model': 'gallery_images.GalleryImage', 'label': 'Gallery Images'},
         {'model': 'carousel_images.CarouselImage', 'label': 'Carousel Images'},

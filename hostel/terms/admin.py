@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import SpecialOffer
+from .models import Terms
 
 
-@admin.register(SpecialOffer)
-class SpecialOfferAdmin(admin.ModelAdmin):
-        model = SpecialOffer
+@admin.register(Terms)
+class TermsAdmin(admin.ModelAdmin):
+        model = Terms
 
         def has_add_permission(self, request):
                 return False
