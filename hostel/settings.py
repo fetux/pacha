@@ -150,21 +150,28 @@ CKEDITOR_CONFIGS = {
 }
 
 ADMIN_REORDER = (
-    {'app': 'about_us', 'models': (
-        'about_us.AboutUs',
-        'rooms.RoomsDescription',
-        'facilities.Facility',
-        'activities.ActivitiesDescription',
-        'location.Location',
-        'terms.Terms',
-        'faqs.Faq',
-        {'model': 'activities.Activity', 'label': 'Events'},
-        {'model': 'gallery_images.GalleryImage', 'label': 'Gallery Images'},
-        {'model': 'carousel_images.CarouselImage', 'label': 'Carousel Images'},
-        {'model': 'special_offers.SpecialOffer', 'label': 'Special Offers'},
-        {'model': 'auth.User', 'label': 'Staff'},
+    {'app': 'about_us', 'label': 'Sitio - Gestion de contenido', 'models': (
+        {'model': 'about_us.AboutUs', 'label': 'Accerca nuestro'},
+        {'model': 'rooms.RoomsDescription', 'label': 'Habitaciones'},
+        {'model': 'facilities.Facility', 'label': 'Servicios'},
+        {'model': 'activities.ActivitiesDescription', 'label': 'Actividades'},
+        {'model': 'location.Location', 'label': 'Ubicacion'},
+        {'model': 'terms.Terms', 'label': 'Terminos y Condiciones'},
+        {'model': 'faqs.Faq', 'label': 'FAQs'},
     )},
-    {'app': 'rooms', 'models': (
-        'rooms.Room',
+    {'app': 'gallery_images', 'label': 'Galerias - Gestion de imagenes', 'models': (
+        {'model': 'gallery_images.GalleryImage', 'label': 'Galeria de Imagenes'},
+        {'model': 'carousel_images.CarouselImage', 'label': 'Carousel de Imagenes - FrontPage'},
+    )},
+    {'app': 'activities', 'label': 'Actividades y Eventos', 'models': (
+        {'model': 'activities.Activity', 'label': 'Eventos'},
+
+    )},
+    {'app': 'rooms', 'label': 'Tarifas y Ofertas', 'models': (
+        {'model': 'rooms.Room', 'label': 'Tarifas Habitaciones'},
+        {'model': 'special_offers.SpecialOffer', 'label': 'Oferta especial'},
+    )},
+    {'app': 'auth', 'models': (
+        {'model': 'auth.User', 'label': 'Staff'},
     )}
 )

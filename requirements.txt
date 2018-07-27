@@ -4,7 +4,6 @@ django-bulk-admin==0.1.1
 django-ckeditor==5.4.0
 django-js-asset==1.1.0
 django-modeladmin-reorder==0.3.1
-djangocms-installer==1.0.1
 Pillow==5.1.0
 pytz==2018.3
 PyYAML==3.12

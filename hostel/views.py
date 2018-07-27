@@ -1,3 +1,4 @@
+from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.http import HttpResponse
 
@@ -11,6 +12,20 @@ from hostel.location.models import Location
 from hostel.rooms.models import Room, RoomsDescription
 from hostel.gallery_images.models import GalleryImage
 from hostel.carousel_images.models import CarouselImage
+from hostel.terms.models import Terms
+from hostel.faqs.models import Faq
+
+
+class EventView(TemplateView):
+    template_name = "events.html"
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        context['lang'] = self.request.session['lang'].strip() if 'lang' in self.request.session else 'en'
+        context['terms'] = Terms.objects.all().first()
+        context['faqs'] = Faq.objects.all()
+        return context
 
 
 class HostelView(FormView):
@@ -20,8 +35,6 @@ class HostelView(FormView):
 
     def __init__(self, *args, **kwargs):
         super(HostelView, self).__init__(*args, **kwargs)
-
-
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -41,6 +54,8 @@ class HostelView(FormView):
         context['events'] = Activity.objects.all()
         context['gallery_images'] = GalleryImage.objects.all()
         context['carousel_images'] = CarouselImage.objects.all()
+        context['terms'] = Terms.objects.all().first()
+        context['faqs'] = Faq.objects.all()
         return context
 
     def form_valid(self, form):

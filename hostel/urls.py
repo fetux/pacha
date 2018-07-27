@@ -14,16 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.models import Group
-from hostel.views import HostelView, switch_lang
+from hostel.views import HostelView, EventView, switch_lang
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    re_path('^$', HostelView.as_view()),
-    re_path('^lang/(?P<lang>[a-z]+)$', switch_lang)
+    url('admin/', admin.site.urls),
+    url('^$', HostelView.as_view()),
+    url('^events$', EventView.as_view()),
+    url('^lang/(?P<lang>[a-z]+)$', switch_lang)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = u"Nucapacha Hostel - Administracion"
