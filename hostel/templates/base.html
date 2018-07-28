@@ -48,16 +48,17 @@
                         {% endif %}
 
                     </ul>
-                    <a href="#" data-toggle="modal" data-target="#currentOfferModal">
-                        <p><i class="fas fa-thumbs-up"></i>
-                            <u>
-                            {% if lang == 'en' %}
-                                CURRENT OFFER:
-                            {% elif lang  == 'es' %}
-                                OFERTA ESPECIAL:
-                            {% endif %}
-                            </u> 10% DISCOUNT FACEBOOK FAN</p>
-                    </a>
+                    {% if special_offer.is_active is True %}
+                        <a href="#" data-toggle="modal" data-target="#currentOfferModal">
+                            <p><i class="fas fa-thumbs-up"></i>
+                                {% if lang == 'en' %}
+                                    <u>CURRENT OFFER:</u> <span>{{ special_offer.title }}</span>
+                                {% elif lang  == 'es' %}
+                                    <u>OFERTA ESPECIAL:</u> <span>{{ special_offer.title_es }}</span>
+                                {% endif %}
+                            </p>
+                        </a>
+                    {% endif %}
                 </div>
                 <div class="col-md-4">
 
@@ -333,15 +334,43 @@
         <div class="modal-content">
             <div class="modal-header text-center">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="currentOfferModalLabel">LIMITED SPECIAL OFFER</h4>
+                <h4 class="modal-title" id="currentOfferModalLabel">
+                    {% if lang == 'en' %}
+                        {{special_offer.title}}
+                    {% elif lang  == 'es' %}
+                        {{special_offer.title_es}}
+                    {% endif %}
+                </h4>
             </div>
             <div class="modal-body">
-                <h2>-- ONLY HERE --</h2>
-                <p>Book direct and save<br>Use coupon code for special discount</p>
+                <h2>
+                    {% if lang == 'en' %}
+                        -- ONLY HERE --
+                    {% elif lang  == 'es' %}
+                        -- SOLO AQUI --
+                    {% endif %}
+                </h2>
+                <p>
+                    {% if lang == 'en' %}
+                        {{special_offer.text|safe}}
+                    {% elif lang  == 'es' %}
+                        {{special_offer.text_es|safe}}
+                    {% endif %}
+                </p>
                 <div class="coupon">
-                    NCPVIP
+                    {% if lang == 'en' %}
+                        {{special_offer.code}}
+                    {% elif lang  == 'es' %}
+                        {{special_offer.code_es}}
+                    {% endif %}
                 </div>
-                <h3>BEST PRICE GUARANTEED</h3>
+                <h3>
+                    {% if lang == 'en' %}
+                        BEST PRICE GUARANTEED
+                    {% elif lang  == 'es' %}
+                        MEJOR PRECIO GARANTIZADO
+                    {% endif %}
+                </h3>
             </div>
         </div>
     </div>

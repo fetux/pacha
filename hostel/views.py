@@ -14,6 +14,7 @@ from hostel.gallery_images.models import GalleryImage
 from hostel.carousel_images.models import CarouselImage
 from hostel.terms.models import Terms
 from hostel.faqs.models import Faq
+from hostel.special_offers.models import SpecialOffer
 
 
 class EventView(TemplateView):
@@ -25,6 +26,7 @@ class EventView(TemplateView):
         context['lang'] = self.request.session['lang'].strip() if 'lang' in self.request.session else 'en'
         context['terms'] = Terms.objects.all().first()
         context['faqs'] = Faq.objects.all()
+        context['special_offer'] = SpecialOffer.objects.all().first()
         return context
 
 
@@ -56,6 +58,7 @@ class HostelView(FormView):
         context['carousel_images'] = CarouselImage.objects.all()
         context['terms'] = Terms.objects.all().first()
         context['faqs'] = Faq.objects.all()
+        context['special_offer'] = SpecialOffer.objects.all().first()
         return context
 
     def form_valid(self, form):

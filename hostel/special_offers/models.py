@@ -4,12 +4,12 @@ from ckeditor.fields import RichTextField
 
 class SpecialOffer(models.Model):
 
-    title = models.CharField(max_length=25)
-    text = RichTextField(max_length=70)
+    title = models.CharField(max_length=35)
+    text = RichTextField(max_length=100)
     code = models.CharField(max_length=6)
 
-    title_es = models.CharField(max_length=25, verbose_name="Titulo")
-    text_es = RichTextField(max_length=70, verbose_name="Texto")
+    title_es = models.CharField(max_length=35, verbose_name="Titulo")
+    text_es = RichTextField(max_length=100, verbose_name="Texto")
     code_es = models.CharField(max_length=6, verbose_name="Codigo")
 
     is_active = models.BooleanField(default=True)
