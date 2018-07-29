@@ -18,6 +18,7 @@ class RoomsDescriptionAdmin(admin.ModelAdmin):
 class RoomAdmin(admin.ModelAdmin):
     model = Room
     readonly_fields = ('room',)
+    list_display = ('room', 'price_shared')
     fields = ('room', 'price_shared', 'price_private')
 
     def has_add_permission(self, request):
