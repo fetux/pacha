@@ -393,7 +393,15 @@
                 <h4 class="modal-title" id="myModalLabel">FREQUENTLY ASKED QUESTIONS</h4>
             </div>
             <div class="modal-body">
-                <p>Besides this FAQ section, we invite you to read our T&Cs and groups guidelines. They exist to make sure that we start a relationship of mutual understanding and to make sure that Nucapacha is a safe, happy and welcoming place to stay. By confirming a reservation at Hostel Nucapacha, regardless if this sheet is signed, you are agreeing to all important points described.</p>
+                {% if lang == 'en' %}
+
+                    <p>Besides this FAQ section, we invite you to read our T&Cs and groups guidelines. They exist to make sure that we start a relationship of mutual understanding and to make sure that Nucapacha is a safe, happy and welcoming place to stay. By confirming a reservation at Hostel Nucapacha, regardless if this sheet is signed, you are agreeing to all important points described.</p>
+
+                {% elif lang  == 'es' %}
+
+                <p>Adem&aacute;s de esta sección de preguntas frecuentes, lo invitamos a leer nuestros lineamientos de T&C y Grupos. Existen para asegurar que comencemos una relación de entendimiento mutuo y para asegurarnos de que Nucapacha sea un lugar seguro, feliz y acogedor donde alojarse. Al confirmar una reserva en Hostel Nucapacha, independientemente de si esta hoja est&aacute; firmada, est&aacute; aceptando todos los puntos importantes descritos.</p>
+
+                {% endif %}
 
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     {% for faq in faqs %}
