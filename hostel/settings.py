@@ -70,7 +70,7 @@ ROOT_URLCONF = 'hostel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/carolina/nucapacha.com/hostel/templates', 'hostel/templates'],
+        'DIRS': ['/home/fetu/nucapacha.com/hostel/templates', 'hostel/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,10 +133,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_ROOT = '/home/carolina/nucapacha.com/hostel/about_us/static'
+STATIC_ROOT = '/home/fetu/nucapacha.com/hostel/about_us/static'
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/home/carolina/nucapacha.com/uploads'
+MEDIA_ROOT = '/home/fetu/nucapacha.com/uploads'
 MEDIA_URL = '/uploads/'
 
 EMAIL_HOST = 'localhost'
