@@ -33,7 +33,7 @@
 p {
     font-size: 2.5rem;
     /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    font-variant: petite-caps;
+    /*font-variant: petite-caps;*/
 }
 /*----------------------------------------*/
 /*  1. About Area
@@ -85,7 +85,7 @@ form.search-form {
 }
 .box-select .select::after {content: "\f331";}
 .box-select .select.arrow::after {content: "\f2f2"; font-size: 24px; top: 8px}
-.about-text {padding-top: 90px; font-variant: petite-caps;}
+.about-text {padding-top: 90px; /*font-variant: petite-caps;*/}
 .about-text p {font-size: 22px; /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif*/}
 .about-links > a {
     border: 1px solid #f1f1f1;
@@ -1211,7 +1211,7 @@ span.c-text {display: inline-block;}
     list-style: inherit;
     font-size: 14px;
     /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    font-variant: petite-caps;
+    /*font-variant: petite-caps*/;
     margin: inherit;
     padding: inherit;
 }
