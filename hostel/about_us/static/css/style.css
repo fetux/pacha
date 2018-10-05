@@ -1205,13 +1205,14 @@ span.c-text {display: inline-block;}
 #tcModal .modal-body{
     height: 500px;
     overflow-y: auto;
+    font-size: 14px;
+}
+#tcModal .modal-body p {
+    font-size: 14px;
 }
 
 #tcModal .modal-body ul {
     list-style: inherit;
-    font-size: 14px;
-    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    /*font-variant: petite-caps*/;
     margin: inherit;
     padding: inherit;
 }
