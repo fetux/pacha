@@ -33,19 +33,48 @@
     console.log(window.location)
     var location = window.location.href.split('#');
     if (location.length > 1) {
-        if (location[1].toLowerCase() == 'faqs') {
-            $('#faqModal').modal('show');
+        var s = location[1].split('/');
+        if (s.length > 1) {
+            var lang_url;
+            switch (s[0].toLowerCase()) {
+                case 'es':
+                    lang_url = 'lang/es';
+                    break;
+                case 'en':
+                    lang_url = 'lang/en';
+                    break;
+            }
+
+            $.get(lang_url, function (r) {
+                switch (s[1].toLowerCase()) {
+                    case 'faqs':
+                    window.location.href = '#faqs';
+                    window.location.reload(true);
+                    break;
+                case 'terms':
+                    window.location.href = '#terms';
+                    window.location.reload(true);
+                    break;
+                }
+            })
+        } else {
+            switch (location[1].toLowerCase()) {
+                case 'faqs':
+                    $('#faqModal').modal('show');
+                    break;
+                case 'terms':
+                    $('#tcModal').modal('show');
+                    break;
+            }
         }
-        else if (location[1].toLowerCase() == 'terms') {
-            $('#tcModal').modal('show');
-        }
+
     }
 
     $('.lang').click(function (e) {
         e.preventDefault();
         $.get($(this).data('lang'), function (r) {
-            console.log(window.location)
-           window.location.reload()
+           console.log(window.location)
+           window.location.reload(true)
         })
     })
     $('.activity-btn').click(function () {
