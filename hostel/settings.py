@@ -70,7 +70,7 @@ ROOT_URLCONF = 'hostel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/fetu/nucapacha.com/hostel/templates', 'hostel/templates'],
+        'DIRS': ['/home/user/nucapacha.com/hostel/templates', 'hostel/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
