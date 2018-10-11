@@ -133,10 +133,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_ROOT = '/home/fetu/nucapacha.com/hostel/about_us/static'
+STATIC_ROOT = '/home/user/nucapacha.com/hostel/about_us/static'
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/home/fetu/nucapacha.com/uploads'
+MEDIA_ROOT = '/home/user/nucapacha.com/uploads'
 MEDIA_URL = '/uploads/'
 
 EMAIL_HOST = 'localhost'
