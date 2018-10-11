@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ActivitiesDescription, Activity
+from .models import ActivitiesDescription, Activity, Event
 
 
 @admin.register(ActivitiesDescription)
@@ -17,4 +17,10 @@ class ActivitiesDescriptionAdmin(admin.ModelAdmin):
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
         model = Activity
+        list_display = ('title', 'text', 'image_tag',)
+
+
+@admin.register(Event)
+class EventAdmin(admin.ModelAdmin):
+        model = Event
         list_display = ('title', 'text', 'image_tag',)

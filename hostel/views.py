@@ -3,10 +3,11 @@ from django.views.generic.edit import FormView
 from django.http import HttpResponse
 
 
+
 from .forms import ContactForm
 
 from hostel.about_us.models import AboutUs
-from hostel.activities.models import ActivitiesDescription, Activity
+from hostel.activities.models import ActivitiesDescription, Activity, Event
 from hostel.facilities.models import Facility
 from hostel.location.models import Location
 from hostel.rooms.models import Room, RoomsDescription
@@ -27,6 +28,7 @@ class EventView(TemplateView):
         context['terms'] = Terms.objects.all().first()
         context['faqs'] = Faq.objects.all()
         context['special_offer'] = SpecialOffer.objects.all().first()
+        context['events'] = Event.objects.all()
         return context
 
 

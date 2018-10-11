@@ -164,7 +164,8 @@ ADMIN_REORDER = (
         {'model': 'carousel_images.CarouselImage', 'label': 'Carousel de Imagenes - FrontPage'},
     )},
     {'app': 'activities', 'label': 'Actividades y Eventos', 'models': (
-        {'model': 'activities.Activity', 'label': 'Eventos'},
+        {'model': 'activities.Activity', 'label': 'Actividades'},
+        {'model': 'activities.Event', 'label': 'Eventos'},
 
     )},
     {'app': 'rooms', 'label': 'Tarifas y Ofertas', 'models': (

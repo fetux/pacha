@@ -11,6 +11,7 @@
             {% endif %}</h3>
     </div>
     <div class="container">
+        <!--
         <div class="row">
             <div class="col-md-12">
                 <div class="event-menu">
@@ -23,17 +24,41 @@
                 </div>
             </div>
         </div>
+        -->
         <div class="row event-items" style="position: relative; height: 1453.16px;">
-            <div class="single-event col-md-8 col-sm-8 col-xs-12 conference" style="position: absolute; left: 0%; top: 0px;">
-                <div class="single-event-item">
-                    <img src="static/img/event/1.jpg" alt="">
-                    <div class="event-text">
-                        <h3 class="event-title">management conferences</h3>
-                        <h3 class="author-name">By : Jhtyg Hyuir</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+
+            {% for e in events %}
+                <div class="single-event col-md-6 col-sm-4 col-xs-12" style="position: absolute; left: 0%; top: 0px;">
+                    <div class="single-event-item">
+                        <img src="{{e.image.url}}" alt="">
+                        <div class="event-text">
+                            <h3 class="event-title">
+                                <a href="{{e.url}}">
+                                    {% if lang == 'en' %}
+                                        {{ e.title.strip }}
+                                    {% elif lang  == 'es' %}
+                                        {{ e.title_es }}
+                                    {% endif %}
+                                </a>
+                            </h3>
+                            <div class="event-content">
+                            {% if lang == 'en' %}
+                                {{ e.text|safe }}
+                            {% elif lang  == 'es' %}
+                                {{ e.text_es|safe }}
+                            {% endif %}
+                            <span><a href="{{e.url}}">Mas Info</a></span>
+                            </div>
+
+
+
+
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
+            <!--
             <div class="single-event col-md-4 small col-sm-4 col-xs-12 music" style="position: absolute; left: 0%; top: 164px;">
                 <div class="single-event-item">
                     <img src="static/img/event/2.jpg" alt="">
@@ -84,6 +109,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
 </section>

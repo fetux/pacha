@@ -1094,20 +1094,30 @@ span.image.s-img {
     transition: all 0.8s ease 0s;
     z-index: 1;
 }
-.event-text > p {
+.event-text > .event-content {
     bottom: -200%;
     color: #ffffff;
     position: absolute;
     transition: all 1s ease 0s;
     width: 48%;
     z-index: 1;
+    line-height: 20px;
 }
-.event-text > p span {
-    font-size: 18px;
+
+.event-text > .event-content p {
+    line-height: normal;
+    font-size: 11px;
+}
+.event-text > .event-content span a {
+    color: white;
+    font-size: 16px;
+    float: right;
     font-weight: 800;
+    text-decoration: underline;
 }
+
 .small .event-text > p {width: 93%;}
-.single-event:hover .event-text > p {bottom: 37px; transition-delay: 0.25s;}
+.single-event:hover .event-text > .event-content {bottom: 37px; transition-delay: 0.25s;}
 .single-event:hover .event-text .author-name {
     bottom: 108px;
     transition-delay: 0.1s;
